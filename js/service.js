@@ -40,7 +40,7 @@ $(function(){
     //
     $.ajax({
         //请求方式
-        type : "POST",
+        type : "GET",
         //请求的媒体类型
         contentType: "application/json;charset=UTF-8",
         dataType: "json",
