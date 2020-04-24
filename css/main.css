@@ -6,7 +6,7 @@
     position: relative;
     background: #ededed;
 }
-#header .top_search {
+.top_search {
     height: 80px;
     width: 1000px;
     margin: 0 auto;
@@ -39,7 +39,7 @@
     padding-left: 15px;
     background-image: url(../img/icon1.gif);
 }
-#header .top_nav_bg {
+.top_nav_bg {
     background: #494949;
     height: 40px;
 }
@@ -49,6 +49,7 @@
     margin: 0 auto;
 }
 .site-nav li {
+    float: left;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     text-transform: uppercase;
