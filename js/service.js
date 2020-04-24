@@ -123,7 +123,7 @@ function showPage(result){
     var pageHtml = "";
     var length = result.length;
     if(!serviceName && !serviceId){
-        result[0].item.length
+       length = result[0].item.length
     }
     allPage = Math.ceil(length/12);
     var option = "";
@@ -145,31 +145,59 @@ function showPage(result){
         '                            </select>\n' +
         '                        </form>';
 
+
     $("#showpage").html(pageHtml);
 }
-var href = window.location.hostname;
-var path = window.location.pathname;
+
+function getHtmlDocName() {
+    var str = window.location.href;
+    str = str.substring(str.lastIndexOf("/") + 1);
+    str = str.substring(0, str.lastIndexOf("."));
+    return str;
+}
+
+var htmlName = getHtmlDocName();
 
 var currentPage = page;
 function selectToUrl(){
     var selectedPage = $("#pageNum option:selected").val();
-    location.href = href + path + "page=" + selectedPage;
+    if(!serviceId){
+        window.location.href = "./" +htmlName+ ".html?page=" + selectedPage;
+    }else{
+        window.location.href ="./"+htmlName+".html?page="+selectedPage+"&serviceId="+serviceId;
+    }
 }
 
 function toIndex(){
-    location.href = href + path + "page=1";
+    if(!serviceId){
+        window.location.href ="./"+htmlName+".html?page=1";
+    }else{
+        window.location.href ="./"+htmlName+".html?page=1&serviceId="+serviceId;
+    }
 }
 
 function toPreviout(){
     currentPage = currentPage == 1 ? 1 : --currentPage;
-    location.href = href + path + "page=" + currentPage;
+    if(!serviceId){
+        window.location.href ="./"+htmlName+".html?page="+currentPage;
+    }else{
+        window.location.href ="./"+htmlName+".html?page="+currentPage+"&serviceId="+serviceId;
+    }
 }
 
 function toNext(){
     currentPage = currentPage == allPage ? allPage : ++currentPage;
-    location.href = href + path + "page=" + currentPage;
+    if(!serviceId){
+        window.location.href ="./"+htmlName+".html?page="+currentPage;
+    }else{
+        window.location.href ="./"+htmlName+".html?page="+currentPage+"&serviceId="+serviceId;
+    }
 }
 
 function toLast(){
-    location.href = href + path + "page=" + allPage;
+    if(!serviceId){
+        window.location.href ="./"+htmlName+".html?page="+allPage;
+    }else{
+        window.location.href ="./"+htmlName+".html?page="+allPage+"&serviceId="+serviceId;
+    }
 }
