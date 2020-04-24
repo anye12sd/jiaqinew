@@ -93,6 +93,9 @@ function createList(result){
         });
         aSearch = aSearch.concat(aTemp); // 将符合要求的数组合并到aSearch;
     });
+    var h3Html = "";
+    h3Html = ' » <a href="./servers.html">服务</a> » <a href="./outsourcing.html?serviceId='+aSearch[0].serviceId+'">'+service+'</a>';
+    $(".index_list h3").html(h3Html)
     var list = "";
     for(var i = 0; i < aSearch.length; i++){
         list += '<li>\n' +
