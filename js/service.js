@@ -1,8 +1,8 @@
 //serviceID:
-//1   外包服务项目
+//3   永康电脑维修
 //2   网络工程
-//3   企业邮局
-//4   网站建设
+//1   it外包服务
+//4   行业解决方案
 //5
 //6   电脑维修
 //7   it外包服务方案
@@ -13,17 +13,17 @@ var id = getUrlParam("id") || false;
 var page = getUrlParam("page") || 1;
 var service;
 switch (serviceId) {
-    case "1":
-        service = "外包服务项目";
+    case "3":
+        service = "永康电脑维修";
         break;
     case "2":
         service = "网络工程";
         break;
-    case "3":
-        service = "企业邮局";
+    case "1":
+        service = "it外包服务";
         break;
     case "4":
-        service = "网站建设";
+        service = "行业解决方案";
         break;
     case "6":
         service = "电脑维修";

@@ -23,7 +23,11 @@
         <div class="top_phone">
             <div>
 <!--                <a href="#"><span>咨询热线&nbsp;&nbsp;&nbsp;</span><span>057987116667</span></a>-->
-                <a href="#"><span>点我报修</span></a>
+                <a href="javascript:void(0)" onclick="showQRcode()"><span>点我报修</span></a>
+                <div class="QRcode">
+                    <img src="./img/qrcode.png" alt="">
+                    <p>扫描二维码报修</p>
+                </div>
 <!--                <span>加入收藏</span>-->
             </div>
 <!--            <div class="search">-->
@@ -91,11 +95,11 @@
             <div class="col-0">
                 <h3>服务</h3>
                 <ul class="list0 p2">
-                    <li style="background:url(./img/1page-img1.jpg) no-repeat left top;">
-                        <h4><a href="./pages/outsourcing.html?serviceId=1">永康IT外包服务</a></h4>
-                        <p class="zoom"><a href="./pages/outsourcing.html?serviceName=it外包服务项目&id=1&serviceId=1" title="it外包服务项目">it外包服务项目</a></p>
-                        <p class="zoom"><a href="./pages/outsourcing.html?serviceName=it外包响应时间&id=2&serviceId=1" title="it外包响应时间">it外包响应时间</a></p>
-                        <p class="zoom"><a href="./pages/outsourcing.html?serviceName=IT外包驻场服务&id=3&serviceId=1" title="it外包驻场服务">it外包驻场服务</a></p>
+                    <li style="background:url(./img/1page-img4.jpg) no-repeat left top;">
+                        <h4><a href="./pages/outsourcing.html?serviceId=1">永康电脑维修</a></h4>
+                        <p class="zoom"><a href="./pages/outsourcing.html?serviceName=it外包服务项目&id=1&serviceId=1" title="it外包服务项目">笔记本芯片级维修</a></p>
+                        <p class="zoom"><a href="./pages/outsourcing.html?serviceName=it外包响应时间&id=2&serviceId=1" title="it外包响应时间">台式机电脑维修</a></p>
+                        <p class="zoom"><a href="./pages/outsourcing.html?serviceName=IT外包驻场服务&id=3&serviceId=1" title="it外包驻场服务">软件维护</a></p>
                         <div class="clear"></div>
                     </li>
                     <li style="background:url(./img/1page-img2.jpg) no-repeat left top;">
@@ -106,14 +110,14 @@
                         <p class="zoom"><a href="./pages/engineer.html?serviceName=安防监控系统&id=6&serviceId=2" title="安防监控系统">安防监控系统</a></p>
                         <div class="clear"></div>
                     </li>
-                    <li style="background:url(./img/1page-img3.jpg) no-repeat left top;">
-                        <h4><a href="./pages/mail.html?serviceId=3">企业邮局</a></h4>
-                        <p class="zoom"><a href="./pages/mail.html?serviceName=企业邮局有什么优点&id=11&serviceId=3" title="企业邮局有什么优点">企业邮局有什么优点</a></p>
-                        <p class="zoom"><a href="./pages/mail.html?serviceName=企业邮局是什么&id=12&serviceId=3" title="企业邮局是什么">企业邮局是什么</a></p>
+                    <li style="background:url(./img/1page-img1.jpg) no-repeat left top;">
+                        <h4><a href="./pages/mail.html?serviceId=3">IT外包服务</a></h4>
+                        <p class="zoom"><a href="./pages/outsourcing.html?serviceName=it外包服务项目&id=1&serviceId=1" title="it外包服务项目">it外包服务项目</a></p>
+                        <p class="zoom"><a href="./pages/outsourcing.html?serviceName=it外包响应时间&id=2&serviceId=1" title="it外包响应时间">it外包响应时间</a></p>
                         <div class="clear"></div>
                     </li>
-                    <li style="background:url(./img/1page-img4.jpg) no-repeat left top;">
-                        <h4><a href="./pages/website.html?serviceId=4">网站建设</a></h4>
+                    <li style="background:url(./img/1page-img1.jpg) no-repeat left top;">
+                        <h4><a href="./pages/website.html?serviceId=4">行业解决方案</a></h4>
                         <p class="zoom"><a href="./pages/website.html?serviceName=网站建设7个基本流程&id=14&serviceId=4" title="网站建设7个基本流程">网站建设7个基本流程</a></p>
                         <p class="zoom"><a href="./pages/website.html?serviceName=网站开发的流程&id=15&serviceId=4" title="网站开发的流程">网站开发的流程</a></p>
                         <div class="clear"></div>
@@ -181,8 +185,11 @@
 </div>
 <div id="footer">
     <div class="lc_footercenter">
-        <p>版权所有 © 永康佳奇网络科技有限公司|永康IT外包|网络维护|电脑维修|弱电工程|网站建设<br>浙江省永康市金苑路2号<br>热线电话： 0579-87116667<br><a href="http://www.beian.miit.gov.cn" target="_blank">沪ICP备14044627号-1</a>				<span></span></p><p><a style="margin-right:10px;" target="blank" href="http://wpa.qq.com/msgrd?V=1&amp;uin=627104694&amp;Site=www.it-zm.com&amp;Menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=1:627104694:1" alt="欢迎咨询"></a>
-    </p><div class="lc_erwei">
+        <p>版权所有 © 永康佳奇网络科技有限公司|永康IT外包|网络维护|电脑维修|弱电工程|网站建设<br>浙江省永康市金苑路2号<br>热线电话： 0579-87116667<br><a href="http://www.beian.miit.gov.cn" target="_blank">沪ICP备14044627号-1</a>	</p>
+        <p>
+            <a style="margin-right:10px;" target="blank" href="http://wpa.qq.com/msgrd?V=1&amp;uin=19974142&amp;Site=www.it-zm.com&amp;Menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=1:19974142:1" alt="欢迎咨询"></a>
+        </p>
+        <div class="lc_erwei">
         <img src="./img/erweima.png">
     </div>
     </div>

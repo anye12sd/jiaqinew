@@ -69,6 +69,10 @@ if (!String.prototype.includes) {
     };
 }
 
+function showQRcode(){
+    $(".QRcode").fadeToggle();
+}
+
 $(function(){
     $(".site-nav li").mouseenter(function(){
         $(this).find(".cn").hide()
