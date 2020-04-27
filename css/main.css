@@ -29,6 +29,14 @@
     z-index: 100;
     background: #fff;
 }
+.telNum{
+    color: #e4211f;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    right:-68px;
+    top:18px;
+}
 .QRcode img{
     width: 100%;
 }
