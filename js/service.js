@@ -112,7 +112,7 @@ function createServerList(result){
     result = result[0].item;
     var length = result.length;
     var list = "";
-    for(var i = (page - 1) * 12; i < (page * 12 - 1 > length ? length : page * 12 - 1); i++){
+    for(var i = (page - 1) * 12; i < (page * 12 > length ? length : page * 12); i++){
         list += '<li>\n' +
             '                            <span>['+result[i].time+']</span>\n' +
             '                            <a href="./outsourcing.html?serviceName='+result[i].title+'&id='+result[i].id+'&serviceId='+result[i].serviceId+'" title="'+result[i].title+'发表于：'+result[i].time+'">'+result[i].title+'</a>\n' +

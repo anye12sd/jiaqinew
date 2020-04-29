@@ -33,7 +33,7 @@ function createList(result){
     result = result[0].item;
     var list = "";
     var length = result.length;
-    for(var i = (page - 1) * 12; i < (page * 12 - 1 > length ? length : page * 12 - 1); i++){
+    for(var i = (page - 1) * 12; i < (page * 12 > length ? length : page * 12); i++){
         list += '<li>\n' +
             '                                                    <span>['+result[i].time+']</span>\n' +
             '                                                    <a href="./news.html?id='+result[i].id+'" title="'+result[i].title+'发表于：'+result[i].time+'">'+result[i].title+'</a>\n' +

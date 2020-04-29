@@ -95,3 +95,7 @@ function getUrlParam(name) {
     //返回参数值
     return result ? decodeURIComponent(result[2]) : null;
 }
+
+$("#copyrights").on("click", function(){
+    location.href = 'http://www.ykjqwl.com';
+})

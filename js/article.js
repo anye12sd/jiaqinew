@@ -33,24 +33,13 @@ function createList(result){
     result = result[0].item;
     var list = "";
     var length = result.length;
-    for(var i = (page - 1) * 12; i < (page * 12 - 1 > length ? length : page * 12 - 1); i++){
+    for(var i = (page - 1) * 12; i < (page * 12 > length ? length : page * 12); i++){
         list += '<li>\n' +
             '                                                    <span>['+result[i].time+']</span>\n' +
             '                                                    <a href="./article.html?id='+result[i].id+'" title="'+result[i].title+'发表于：'+result[i].time+'">'+result[i].title+'</a>\n' +
             '                                                </li>'
     }
     $(".index_list ul").html(list);
-}
-
-function createHtml(result){
-    var aSearch = [];
-    result.forEach(function(ele){//循环外层数组
-        var aTemp = ele.item.filter(function(i){
-            return i.id.includes(id); // 过滤符合要求的item数组
-        });
-        aSearch = aSearch.concat(aTemp); // 将符合要求的数组合并到aSearch;
-    });
-    console.log(aSearch)
 }
 
 var allPage;

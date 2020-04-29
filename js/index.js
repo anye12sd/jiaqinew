@@ -1,4 +1,7 @@
 $(function(){
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+        window.location.href = "http://www.ykjqwl.com/wap/index_h5.html"
+    }
     //请求参数
     //
     $.ajax({

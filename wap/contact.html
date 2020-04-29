@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>联系我们</title>
+    <meta name="keywords" content="永康IT外包,IT外包服务,IT外包公司,上门电脑维护,网络维护,电脑维修">
+    <meta name="description" content="永康佳奇IT服务中心在IT外包领域有着与超过100家企业客户保持长期良好的IT外包合作关系，拥有长达10年之久的IT外包服务经验。">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/wapcss.css">
+    <script src="https://api.map.baidu.com/api?v=2.0&ak=4ca16f3d1df25593713c88206ae09189"></script>
+</head>
+<body>
+<header id="header">
+    <hgroup id="logo-container" class="text-only center">
+        <h1 id="company-title">联系我们</h1>
+    </hgroup>
+    <nav id="menu">
+        <ul id="main-menu" class="menu">
+            <li class="menuitem">
+                <a href="./index_h5.html">网站首页</a>
+            </li>
+            <li class="menuitem">
+                <a href="./mails.html?serviceId=3">永康电脑维修</a>
+            </li>
+            <li class="menuitem">
+                <a href="./engineer.html?serviceId=2">网络工程</a>
+            </li>
+            <li class="menuitem">
+                <a href="./outsourcing.html?serviceId=1">it外包服务</a>
+            </li>
+            <li class="menuitem">
+                <a href="./website.html?serviceId=4">行业解决方案</a>
+            </li>
+            <li class="menuitem">
+                <a href="./cases.html">成功案例</a>
+            </li>
+            <li class="menuitem">
+                <a href="./about.html">关于佳奇</a>
+            </li>
+            <li class="menuitem">
+                <a href="./contact.html">联系我们</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<section id="main-list" class="widget widget-textlist ">
+    <div class="widget-header">
+        <h2>联系我们</h2>
+    </div>
+    <div class="article-show" style="display: block">
+        <div class="map">
+            <div id="map-bg" style="width:100%;height:400px;margin:0 auto"></div>
+        </div>
+        <p style="margin-top: 20px;">公司名称:永康佳奇网络科技有限公司</p>
+        <p>公司地址:浙江省永康市金苑路2号<a href="http://api.map.baidu.com/marker?location=28.90049,120.061213&title=我去&content=萤火虫电脑&output=html" style="margin-left: 8px">点击导航</a>
+        </p>
+        <p>公司电话:   0579-87116667  </p>
+        <p>Email:         320838687@qq.com</p>
+        <p>QQ:            320838687</p>
+    </div>
+</section>
+<footer id="footer">
+    <div id="copyrights">永康电脑维修</div>
+</footer>
+</body>
+<script>
+    var BMap = BMap
+    var map = new BMap.Map('map-bg')   // 缩放限制
+    map.centerAndZoom(new BMap.Point(120.061213, 28.90049), 19)
+    map.addControl(new BMap.MapTypeControl())   // 添加地图类型控件
+    map.enableScrollWheelZoom() // 滚轮
+    var pt = new BMap.Point(120.061213, 28.90049);
+    // 添加带有定位的导航控件
+    var navigationControl = new BMap.NavigationControl({
+        // 靠左上角位置
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        // LARGE类型
+        type: BMAP_NAVIGATION_CONTROL_LARGE,
+        // 启用显示定位
+        enableGeolocation: true
+    });
+    map.addControl(navigationControl);
+    // 添加定位控件
+    var geolocationControl = new BMap.GeolocationControl();
+    geolocationControl.addEventListener("locationSuccess", function(e){
+        // 定位成功事件
+        var address = '';
+        address += e.addressComponent.province;
+        address += e.addressComponent.city;
+        address += e.addressComponent.district;
+        address += e.addressComponent.street;
+        address += e.addressComponent.streetNumber;
+        alert("当前定位地址为：" + address);
+    });
+    geolocationControl.addEventListener("locationError",function(e){
+        // 定位失败事件
+        alert(e.message);
+    });
+    map.addControl(geolocationControl);
+    var myIcon = new BMap.Icon("../img/location.png", new BMap.Size(18,25));
+    var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+    map.addOverlay(marker2);
+</script>
+</html>

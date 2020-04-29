@@ -58,6 +58,7 @@ ol, ul {
     list-style-image:none;
     list-style-position:outside;
     list-style-type:none;
+    list-style: none;
 }
 caption, th {
     text-align:left;
@@ -67,7 +68,7 @@ q:before, q:after, blockquote:before, blockquote:after {
 }
 a{
     text-decoration:none;
-    color: #000;
+    color:#000;
 }
 a:hover, a:focus {
     color: #2a6496;
