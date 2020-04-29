@@ -82,6 +82,10 @@ $(function(){
         $(this).find(".cn").show()
         $(this).find(".en").hide()
     })
+
+    $("#copyrights").on("click", function(){
+        location.href = 'http://www.ykjqwl.com';
+    })
 })
 
 //获取url中的参数
@@ -96,6 +100,3 @@ function getUrlParam(name) {
     return result ? decodeURIComponent(result[2]) : null;
 }
 
-$("#copyrights").on("click", function(){
-    location.href = 'http://www.ykjqwl.com';
-})
