@@ -69,8 +69,8 @@ if (!String.prototype.includes) {
     };
 }
 
-function showQRcode(){
-    $(".QRcode").fadeToggle();
+function showQRcode(obj){
+    $(obj).next().fadeToggle();
 }
 
 $(function(){

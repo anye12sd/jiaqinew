@@ -1,9 +1,9 @@
 $(function(){
-    // if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
-    //     console.log("mobile")
-    // }else{
-    //     window.location.href = "http://www.ykjqwl.com/index.html"
-    // }
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+        console.log("mobile")
+    }else{
+        window.location.href = "http://www.ykjqwl.com/index.html"
+    }
     //
     $.ajax({
         //请求方式

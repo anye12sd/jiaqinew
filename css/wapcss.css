@@ -258,6 +258,8 @@
 }
 .article-show p{
     line-height: 1.5;
-    text-indent: 32px;
     font-size: 16px;
+}
+.article-show p img{
+    width: 100%;
 }
