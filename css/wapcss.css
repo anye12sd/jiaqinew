@@ -263,3 +263,13 @@
 .article-show p img{
     width: 100%;
 }
+.swiper-nav{
+    max-width: 450px;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    height: 300px;
+}
+.swiper-nav img{
+    width: 100%;
+}

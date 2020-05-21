@@ -3,139 +3,139 @@
         "item":[
             {
                 "id": "1",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "PDF加密了怎么打印",
                 "content": "怎么打印加密了的PDF文档呢？针对加密PDF文档的打印方法，可以通过相关破解工具对PDf文档进行破解之后再执行打印操作。下面就具体来了解一下破解加密PDf文档并实现打印的方法。||首先，我们需要利用相关PDF编辑器打开加密的PDF文档，点击“文件”菜单后会发现其“打印”菜单项处于灰色状态，即无法正常进行打印操作。||易于使用的PDF密码移除工具|https://smallpdf.com/cn/unlock-pdf"
             },
             {
                 "id": "2",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "EXCEL单元格锁定密码破解",
                 "content": "方法一：|1.首先，利用Excel快捷键\"Ctrl + A\"全选所以的单元格，然后，右键选择“设置单元格格式”。|2.在弹出的“单元格格式”中选择“保护”，取消“锁定”前面的钩去掉。|方法二：|1.打开文件。|2.工具---宏----录制新宏---输入名字，如“aa”。|3.停止录制(这样得到一个空宏)。|4.工具---宏----宏,选“aa”,点编辑按钮。|5.删除窗口中的所有字符,替换为下面的内容:|    Option Explicit|    Public Sub AllInternalPasswords()|    ' Breaks worksheet and workbook structure passwords. Bob McCormick|    ' probably originator of base code algorithm modified for coverage|    ' of workbook structure / windows passwords and for multiple passwords|    '|    ' Norman Harker and JE McGimpsey 27-Dec-2002 (Version 1.1)|    ' Modified 2003-Apr-04 by JEM: All msgs to constants, and|    ' eliminate one Exit Sub (Version 1.1.1)|    ' Reveals hashed passwords NOT original passwords|    Const DBLSPACE As String = vbNewLine & vbNewLine|    Const AUTHORS As String = DBLSPACE & vbNewLine & _|    \"Adapted from Bob McCormick base code by\" & _|    \"Norman Harker and JE McGimpsey\"|    Const HEADER As String = \"AllInternalPasswords User Message\"|    Const VERSION As String = DBLSPACE & \"Version 1.1.1 2003-Apr-04\"|    Const REPBACK As String = DBLSPACE & \"Please report failure \" & _|    \"to the microsoft.public.excel.programming newsgroup.\"|    Const ALLCLEAR As String = DBLSPACE & \"The workbook should \" & _|    \"now be free of all password protection, so make sure you:\" & _|    DBLSPACE & \"SAVE IT NOW!\" & DBLSPACE & \"and also\" & _|    DBLSPACE & \"BACKUP!, BACKUP!!, BACKUP!!!\" & _|    DBLSPACE & \"Also, remember that the password was \" & _|    \"put there for a reason. Don't stuff up crucial formulas \" & _|    \"or data.\" & DBLSPACE & \"Access and use of some data \" & _|    \"may be an offense. If in doubt, don't.\"|    Const MSGNOPWORDS1 As String = \"There were no passwords on \" & _|    \"sheets, or workbook structure or windows.\" & AUTHORS & VERSION|    Const MSGNOPWORDS2 As String = \"There was no protection to \" & _|    \"workbook structure or windows.\" & DBLSPACE & _|    \"Proceeding to unprotect sheets.\" & AUTHORS & VERSION|    Const MSGTAKETIME As String = \"After pressing OK button this \" & _|    \"will take some time.\" & DBLSPACE & \"Amount of time \" & _|    \"depends on how many different passwords, the \" & _|    \"passwords, and your computer's specification.\" & DBLSPACE & _|    \"Just be patient! Make me a coffee!\" & AUTHORS & VERSION|    Const MSGPWORDFOUND1 As String = \"You had a Worksheet \" & _|    \"Structure or Windows Password set.\" & DBLSPACE & _|    \"The password found was: \" & DBLSPACE & \"$$\" & DBLSPACE & _|    \"Note it down for potential future use in other workbooks by \" & _|    \"the same person who set this password.\" & DBLSPACE & _|    \"Now to check and clear other passwords.\" & AUTHORS & VERSION|    Const MSGPWORDFOUND2 As String = \"You had a Worksheet \" & _|    \"password set.\" & DBLSPACE & \"The password found was: \" & _|    DBLSPACE & \"$$\" & DBLSPACE & \"Note it down for potential \" & _|    \"future use in other workbooks by same person who \" & _|    \"set this password.\" & DBLSPACE & \"Now to check and clear \" & _|    \"other passwords.\" & AUTHORS & VERSION|    Const MSGONLYONE As String = \"Only structure / windows \" & _|    \"protected with the password that was just found.\" & _|    ALLCLEAR & AUTHORS & VERSION & REPBACK|    Dim w1 As Worksheet, w2 As Worksheet|    Dim i As Integer, j As Integer, k As Integer, l As Integer|    Dim m As Integer, n As Integer, i1 As Integer, i2 As Integer|    Dim i3 As Integer, i4 As Integer, i5 As Integer, i6 As Integer|    Dim PWord1 As String|    Dim ShTag As Boolean, WinTag As Boolean|    Application.ScreenUpdating = False|    With ActiveWorkbook|    WinTag = .ProtectStructure Or .ProtectWindows|    End With|    ShTag = False|    For Each w1 In Worksheets|    ShTag = ShTag Or w1.ProtectContents|    Next w1|    If Not ShTag And Not WinTag Then|    MsgBox MSGNOPWORDS1, vbInformation, HEADER|    Exit Sub|    End If|    MsgBox MSGTAKETIME, vbInformation, HEADER|    If Not WinTag Then|    MsgBox MSGNOPWORDS2, vbInformation, HEADER|    Else|    On Error Resume Next|    Do 'dummy do loop|    For i = 65 To 66: For j = 65 To 66: For k = 65 To 66|    For l = 65 To 66: For m = 65 To 66: For i1 = 65 To 66|    For i2 = 65 To 66: For i3 = 65 To 66: For i4 = 65 To 66|    For i5 = 65 To 66: For i6 = 65 To 66: For n = 32 To 126|    With ActiveWorkbook|    .Unprotect Chr(i) & Chr(j) & Chr(k) & _|    Chr(l) & Chr(m) & Chr(i1) & Chr(i2) & _|    Chr(i3) & Chr(i4) & Chr(i5) & Chr(i6) & Chr(n)|    If .ProtectStructure = False And _|    .ProtectWindows = False Then|    PWord1 = Chr(i) & Chr(j) & Chr(k) & Chr(l) & _|    Chr(m) & Chr(i1) & Chr(i2) & Chr(i3) & _|    Chr(i4) & Chr(i5) & Chr(i6) & Chr(n)|    MsgBox Application.Substitute(MSGPWORDFOUND1, _|    \"$$\", PWord1), vbInformation, HEADER|    Exit Do 'Bypass all for...nexts|    End If|    End With|    Next: Next: Next: Next: Next: Next|    Next: Next: Next: Next: Next: Next|    Loop Until True|    On Error GoTo 0|    End If|    If WinTag And Not ShTag Then|    MsgBox MSGONLYONE, vbInformation, HEADER|    Exit Sub|    End If|    On Error Resume Next|    For Each w1 In Worksheets|    'Attempt clearance with PWord1|    w1.Unprotect PWord1|    Next w1|    On Error GoTo 0|    ShTag = False|    For Each w1 In Worksheets|    'Checks for all clear ShTag triggered to 1 if not.|    ShTag = ShTag Or w1.ProtectContents|    Next w1|    If ShTag Then|    For Each w1 In Worksheets|    With w1|    If .ProtectContents Then|    On Error Resume Next|    Do 'Dummy do loop|    For i = 65 To 66: For j = 65 To 66: For k = 65 To 66|    For l = 65 To 66: For m = 65 To 66: For i1 = 65 To 66|    For i2 = 65 To 66: For i3 = 65 To 66: For i4 = 65 To 66|    For i5 = 65 To 66: For i6 = 65 To 66: For n = 32 To 126|    .Unprotect Chr(i) & Chr(j) & Chr(k) & _|    Chr(l) & Chr(m) & Chr(i1) & Chr(i2) & Chr(i3) & _|    Chr(i4) & Chr(i5) & Chr(i6) & Chr(n)|    If Not .ProtectContents Then|    PWord1 = Chr(i) & Chr(j) & Chr(k) & Chr(l) & _|    Chr(m) & Chr(i1) & Chr(i2) & Chr(i3) & _|    Chr(i4) & Chr(i5) & Chr(i6) & Chr(n)|    MsgBox Application.Substitute(MSGPWORDFOUND2, _|    \"$$\", PWord1), vbInformation, HEADER|    'leverage finding Pword by trying on other sheets|    For Each w2 In Worksheets|    w2.Unprotect PWord1|    Next w2|    Exit Do 'Bypass all for...nexts|    End If|    Next: Next: Next: Next: Next: Next|    Next: Next: Next: Next: Next: Next|    Loop Until True|    On Error GoTo 0|    End If|    End With|    Next w1|    End If|    MsgBox ALLCLEAR & AUTHORS & VERSION & REPBACK, vbInformation, HEADER|    End Sub|6.关闭编辑窗口。|7.工具---宏-----宏,选AllInternalPasswords,运行,确定两次,等2分钟,再确定即可完成操作。"
             },
             {
                 "id": "3",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "千兆网卡和百兆网卡的区别",
                 "content": "主要是支持的最大带宽不同。||千兆网卡支持最大为千兆带宽，百兆网卡支持最大为百兆带宽。|判断千兆网卡和百兆网卡：||      ◆外表不同||      若为独立网卡，可见网卡插口面板一般带有工作指示灯。百兆网卡上一般带有两个指示灯而千兆网卡上一般带有四个指示灯，分别是10、100、1000及工作指示灯。||      千兆网卡是一款32-bit PCI总线接口标准的10/100/1000Mb/s千兆网卡，符合10Base-T，100Base-TX，1000Base-T网络标准。支持32位PCI数据总线，传输数据无需占用CPU时间，可以不通过CPU直接与内存进行数据交换，从而减轻主机负载。采用RJ-45接口，使用双绞线接入，实现方便、快捷、简单、可靠的连接。由于千兆以太网物理层的实现与10M/100M不同，使用的双绞线需要将四对线都连接上。制作电缆时需要使用超五类线。||      ◆软件判断||      其实判断千兆网卡和百兆网卡很简单，可以用软件来进行检测，例如鲁大师。||"
             },
             {
                 "id": "4",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "电脑桌面下方的任务栏跑偏了怎么办",
                 "content": "解决方法：|1，右键任务栏空白处中间位置不放，拖到下面任务栏位置放开即可。|2，在任务栏上设置锁定就完成。"
             },
             {
                 "id": "5",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "电脑蓝屏自动重启怎么回事",
                 "content": "你好，电脑蓝屏，主要是：“内存有错误”或“软件不兼容”引起！||||1。试试开机，出完电脑品牌后，按F8，安全模式，光标选定：最后一次正确配置，||回车，回车，按下去！【关键一步】||2。再不行，进安全模式，回车，到桌面后，杀毒软件，全盘杀毒！||“隔离区”的东西，彻底删除！||3。再使用：360安全卫士，“功能大全”里的：“360系统急救箱”，||点：开始急救！重启后，点开“文件恢复区”，全选，彻底删除文件！||系统修复，全选，立即修复！【关键一步】||网络修复，开始修复，重启电脑！||360安全卫士，扫描插件，立即清理！360安全卫士，系统修复，一键修复！||4。再不行，拔下显卡和内存条，橡皮擦擦，再用毛刷，清理插槽灰尘和风扇，||更换内存插槽等！【台式机】||5。检查是否有同类功能的，多余类似软件，如：多款播放器，多款杀毒软件||等，卸载多余的，只留一款，因为同类软件，互不兼容！【关键一步】||6。再不行，下载“驱动人生”，升级：显卡驱动！||7。如果还是不行，需要“一键还原”或“重装系统”了！ ||8。硬件有问题，送到专业是电脑维修店去处理"
             },
             {
                 "id": "6",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "打印机共享无法连接怎么办",
                 "content": "局域网中设置了打印机共享后，经常会遇到连接不了的问题。这里面大都是打印服务端的问题，在这里我们将常见的几种情况来分析一下。||方法/步骤      ||    一般如果系统刚装好后，不怎么变动系统程序的话，一般共享连接都正常的。如果暂时连接不上的话，我们可以用以下方法再次连接一下。|第一种方法，点击桌面左下角的开始菜单，打开控制面板，点开打印机和传真，点击打印机和传真左侧的添加打印机，在弹出的添加打印机向导中，选下一步，再选“网络打印机或连接到其他计算机的打印机”选项，再在下一步中，可以选择\"浏览打印机”,如果你知道确切的对方的网络邻居的名字和打印机名称，也可以选“连接到这台打印机”选项。         |      |    第二种方法较简单，可以在桌面双击网上邻居，在网上邻居的界面，点击左侧的“查看工作组计算机”选项，在里面双击需要连接的打印机点确定就行，|    如果连接不了，显示“GHUST用户被禁用”之类的话，可以进控制面板，点击控制面板里的“管理工具”，选“计算机管理”，选左侧的“本地用户和组”，右击用户里的“guest\"属性，将属性里的“用户不能更改密码”和“帐户已停用”勾掉，点确定。如下图，GUEST帐户就启用了。     |         |        | 如果以上方法还是无效的话，继续选择控制面板，管理工具，选择“本地安全策略”。点开“本地策略”中的“用户权利指派”，在右侧的策略中找到“从网络访问计算机”，将“guest\"用户添加上。再找到“拒绝从网络访问这台计算机”，在该策略中如果看到“guest”，将其删除。点确定保存。|| ||| 除了以上方法外，你还需关注一下你的杀毒软件或安全卫士是否阻止了打印，打印服务端和客户端都要看一下。如果还不行，最好将打印服务端的系统重新安装一次，情况会好很多。还有一种情况是你的网线或路由交换机出了问题，局域网已经中断了。"
             },
             {
                 "id": "7",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "在WIN8安装中使用DISKPART命令进行分区的方法|",
                 "content": "Diskpart命令是Windows环境下的一个命令，利用diskpart可实现对硬盘的分区管理，包括创建分区、删除分区、合并(扩展)分区，完全可取代分区魔术师等第三方工具软件，它还有分区魔术师无法实现的功能，如设置动态磁盘、镜像卷等，而且设置分区后不用重启电脑也能生效。|||　　||正常运行该命令时需要系统服务的支持，所以在纯DOS、XP内核的WinPE环境下都是不能运行的，但是在Windows 8的预安装环境下却是可以的。利用Diskpart命令来分区，既不用借助第三方工具，也不会产生100MB的“系统保留”分区，其次分区操作直接设置即刻生效，不用重新启动计算机。||　　利用Diskpart命令分区方法：||　　1.当安装程序运行到创建磁盘分区界面时→按下“Shift+F10”→启动命令窗口。||　　2.键入“Diskpart”→回车→进入“Diskpart”的命令环境，其提示符为“DISKPART>”。||　　3.在此提示下键入相应命令就可以进行分区操作，具体用到的命令有：||　　Clean||　　List||　　Select||　　Create||　　Format||　　Exit||　　这些命令的使用方法可以在Diskpart命令提示符下键入Help或者通过网络查询，如果不清楚可以查看。||　　4.使用“List Disk”命令显示的目标磁盘若为“1”号，则建立分区的步骤如下：||　　以下是命令顺序及操作解释：||　　List Disk：显示本机的所有磁盘，以便正确操作目标磁盘||　　Select Disk 1：选择1号磁盘    一定要选对目标磁盘 前面会有*号标志||　　Clean ：清除1号磁盘上的所有分区||　　Create PartitionPrimary Size=512000 创建主分区，容量为：512000MB||　　Active：激活主分区||　　Format Quick：快速格式化当前分区||　　Create PartitionExtended：创建扩展分区||　　Create PartitionLogical Size=512000：创建逻辑分区一，容量为：512000MB||　　Format Quick：快速格式化当前分区||　　Create PartitionLogical Size=512000：创建逻辑分区二，容量为：512000MB||　　Format Quick ：快速格式化当前分区||　　Create PartitionLogical ：创建逻辑分区三，大小为剩余的容量||　　Format Quick ：快速格式化当前分区||　　Exit ：退出Diskpart命令环境||　　Exit ：退出命令窗口||　　这里要注意的是Diskpart分区时，一定要选对目标磁盘，当前被选中的磁盘/分区前面会有*号标志，可以用List Disk/Partition来进行查看。另外在分区前也可以用Resan重新扫描一下机器的磁盘，以便正确选择目标磁盘。||　　5.这时用户再点击“您想将Windows安装在何处?”窗口中的 “刷新”选项后就会出现刚才分区的结果，至此，分区操作结束。"
             },
             {
                 "id": "8",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "用 DISM 命令修复 WINDOWS 脱机系统",
                 "content": "如果我们的系统出了问题进不了系统，就可以在 WinPE 、Windows To Go 或第二系统中对脱机系统进行检测与修复；同理也可以对装载的映像进行检测与修复。|||一、检查脱机或装载的映像是否可修复|||    1.扫描脱机或装载的映像来检查损坏。在管理员命令提示符下键入以下命令：|||    Dism /Image:X:\\ /Cleanup-Image /ScanHealth  （X为脱机系统盘符）|||    或：Dism /Image:D:\\offline /Cleanup-Image /ScanHealth|||    2.检查脱机或装载的映像以查看是否有检测到损坏。在管理员命令提示符下键入：|||    Dism /Image:X:\\ /Cleanup-Image /CheckHealth|||    或：Dism /Image:D:\\offline /Cleanup-Image /CheckHealth|||二、修复脱机或装载的映像|||    1.若要使用已装载的映像作为修复源来修复一个脱机脱机或装载的映像，请在管理员命令提示符下键入下列命令：|||    Dism /Image:X:\\ /Cleanup-Image /RestoreHealth /Source:D:\\test\\mount\\windows|||    或：Dism /Image:D:\\offline /Cleanup-Image /RestoreHealth /Source:D:\\test\\mount\\windows|||    2.若要使用脱机系统作为修复源来修复另一个脱机映像或装载映像，请在管理员命令提示符下键入下列命令：|||    Dism /Image:X:\\ /Cleanup-Image /RestoreHealth /Source:E:\\windows|||    或：Dism /Image:D:\\offline /Cleanup-Image /RestoreHealth /Source:E:\\windows|||    3.若要使用当前在线系统作为修复源来修复一个脱机或装载的映像，请在管理员命令提示符下键入下列命令：|||    Dism /Image:X:\\ /Cleanup-Image /RestoreHealth /Source:C:\\windows|||    或：Dism /Image:D:\\offline /Cleanup-Image /RestoreHealth /Source:C:\\windows|||    4.若要在线修复一个脱机或装载的映像，请在管理员命令提示符下键入下列命令：|||    Dism /Image:X:\\ /Cleanup-Image /RestoreHealth|||    或：Dism /Image:D:\\offline /Cleanup-Image /RestoreHealth|||    另外，如果我们清楚的知道系统损坏的部位，则可以指点打点，精确修复某一系统文件夹而节约时间。|||    Dism /Online /Cleanup-Image /RestoreHealth /Source:E:\\Windows\\System32 /LimitAccess|||    或：Dism /Image:X:\\ /Cleanup-Image /RestoreHealth /Source:C:\\Windows\\System32|||    或：Dism /Image:D:\\offline /Cleanup-Image /RestoreHealth /Source:D:\\test\\mount\\windowsSystem32"
             },
             {
                 "id": "9",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "OUTLOOK网址连接打不开解决办法",
                 "content": "一 修改注册表。 1. Ctrl+R 在探出的框中输入 regedit||2.||按照这个路径打开注册表 HKEY_CURRENT_USER\\Software\\Classes||3. 选中.htm 文件，双击修改键值，将键值修改成 htmlfile||4 找到.html .xht 以及.xhtml 将这三个的键值都改成 htmlfile 这个时候可能 outlook 已经好用了。 如果不好用我们需要将 IE 设置为默认浏览器。 二 将 IE 设置为默认浏览器 在这个路径下 Tool/Internet Options/programs 点击 Make default 按钮。 中 的 径 这 的 工 -Internet选 -程 -默 的 文 路 是 样 ： 具 项 序 认 web浏 器 览 。 三 问题已经解决了，看看好用了么！！！"
             },
             {
                 "id": "11",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "监控硬盘新的标准",
                 "content": "安防存储联盟与公安部安全与警用电子产品质量检测中心达成战略合作||1月7日下午，由深圳市安全防范协会、中国公共安全杂志社和CPS中安网联合主办的“2015全国安防界迎春团拜会”在深圳世界之窗隆重召开，国内安防行业领军企业海康、大华、宇视等企业的高管悉数到会，而希捷作为安防存储领域代表性企业高调亮相此次团拜会，以唯一协办单位身份全程参与本次盛会，希捷科技全球副总裁、中国区总裁孙丹特意携中国区管理团队出席，表现出对本次团拜会的高度重视。||在本次团拜会上，身兼安防监控存储科技创新产业联盟主席的孙丹与公安部安全与警用电子产品质量检测中心签署战略合作协议。对于监控存储行业来说，这项合作的达成具有重要的标志性意义，根据协议，检测中心在检测同类产品时将与联盟在检测方法和标准上进行探讨，而联盟也会给予检测中心充分的技术支持。||对于希捷来说，此项合作标志着其在监控硬盘标准方面的努力迈出了里程碑式的一步。众所周知，安防监控存储科技创新产业联盟的成立，除了促进各企业间的横向协作、共同发展外，规范产品、统一标准也一直是个重要课题，尽快制定切实可行的监控硬盘行业标准不仅顺应市场的需求，更是行业良性健康发展的重要保障。||在国内监控硬盘行业标准的摸索和制定过程中，公安部安全与警用电子产品质量检测中心和安防监控存储科技创新产业联盟都扮演着重要角色。一方是国内唯一一家有资格对硬盘进行质量检测并提出相关标准的政府机构，另一方则因其联盟中重要成员希捷在监控硬盘市场已经占据70%的份额，可以将自己的监控硬盘作为事实标准提供给前者参考，而在监控硬盘标准制定过程中具有不可忽视的作用。从这个角度来说，两者本次战略合作的意义怎么解读都不为过.||此外在团拜会期间，中国公共安全杂志社还主办了“洞察商机，重塑安防”高端对话会。孙丹作为安防存储企业唯一代表参与对话，结合“创新、整合、协作——安防融合背景下的互联网发展思维”的对话主题发表了精彩阐述。在随后的颁奖典礼上，希捷先后荣获第三届中国智慧城市建设推荐品牌和2014年度中国安防十大新锐产品两项殊荣。||从去年3月份安防监控存储科技创新产业联盟创立开始，希捷就明显加大在安防监控行业的推广力度，如果说联盟的成立标志着希捷在安防行业开始加速跑的话，去年10月份独立参展北京安博会则营造出一个阶段性的高潮。高调亮相本次团拜会，是进入新的一年后，希捷在安防领域的又一次主动出击，它不仅是去年希捷在安防行业一系列令人眼花缭乱市场推广的延续，更预示着希捷在新的一年还将继续牢牢抓紧安防存储这个重要的领域。||2015，国内安防监控存储的市场大戏正式拉开帷幕。"
             },
             {
                 "id": "12",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "WIN10玩XBOX游戏",
                 "content": "在上周的Win10发布会上，我们看到了微软对于PC游戏的努力，以及融合Windows和Xbox One的决心。微软在发布会上同样表示，Windows10将允许多用户同时游戏。||通过Xbox One平台，Win10将“解锁”Xbox Live的潜力，将Xbox Live打造成全社交网络应用。在新的Win10预览版9926上，我们可以看到一个微软全新打造的Xbox应用。||玩家可以在全新的Xbox应用中得到他们的个人资料，信息，动态和好友列表等。在新的应用中，微软将加入游戏串流功能，也就是说当玩家在客厅玩完Xbox游戏之后，依然可以回到卧室是用笔记本平板等设备继续开始之前的游戏。这让玩家充分发挥他们的Xbox，个人电脑和平板的潜力。该应用还将很快帮助玩家录制史诗般的时刻，并且剪辑后快速分享给朋友们。||可惜的是，目前该应用并不支持中文，希望微软会在未来的Win10预览版中增加对于中文的支持。"
             },
             {
                 "id": "13",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "WINDOWS 10 将原生支持 FLAC 无损音频格式",
                 "content": "微软操作系统部门 Gabriel Aul 在 Twitter 上预告了接下来的 Windows 10 功能。在他的截图中，显示了 Windows Media Player 在播放 FLAC 无损音频格式的音乐 – 应该可以确定 Windows 10 将原生支持 FLAC。||Gabriel Aul 称，“观察力敏锐的 Windows Insiders 将会在这张图里发现某样酷的东西，明年可以期待。”看起来，微软会在明年的 Windows 10 中加入这一原生支持。||目前 Windows 10 已经原生支持 MKV 视频格式，HEVC/H.265 视频压缩标准的原生支持也将到来。"
             },
             {
                 "id": "14",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "WIN10不会再犯WIN8那样的错",
                 "content": "很多用户现在使用的是Windows 8.1系统，而下一个正式版本很快就要出来了，但不是Windows 9而是Windows 10。||那么，Windows 9怎么了呢？||微软Windows部门的新营销主管托尼普罗菲特（Tony Prophet）周一出席旧金山Dreamforce大会时对这个问题进行了解答。他引述了公司首席执行官萨蒂亚·纳德拉（Satya Nadella）的一些话。他说：“Windows 9确实存在，但公司后来将它放弃了。”||微软并不希望人们将下一版Windows与不太招人喜欢的Windows 8联系在一起。|他解释说：“Windows 10不是在Windows 8.1基础上进行的增量升级，而是切切实实地向前迈了一步。我们打算打造一个统一的平台，一个能够通过平板电脑、智能手机、PC等设备将很多物联网设备联合在一起并且最终汇入Xbox的统一的生态系统。”||微软开发Windows 10的方式也与以前不同了。||微软准备让人们在开发阶段就开始测试该系统，这比以前的Windows要早很多。最新版本的Windows 10被称作“技术预览版”。||微软在两周前就发布了技术预览版Windows 10，到现在它的下载量已经达到100万次。||微软在发布Windows 8之前也对它进行了详尽的测试，测试总时长达到12.4亿小时。然而Windows开发团队并未听取测试反馈意见。在Windows 8正式发售前数月，业内权威人士甚至将它称作“另一个Vista”。||但是普罗菲特说，这次微软不会再犯同样的错。他说：“我们不会再犯同样的错，原因是我们听取了客户尤其是企业用户的意见。”||在这个方面，Windows 10可以说也跟以前的产品不同。Windows 8纯粹就是为触屏平板电脑而设计的，结果被业内人士批得一无是处。很多企业用户根本不想使用Windows 8，他们一直忙于从XP系统升级到Windows 7系统。||普罗菲特说：“我们为Windows 8设定的目标是将它打造成企业用户领域的最佳OS。这就是早期的重点，现在已经有100万人在使用它，我们将虚心听取他们的意见。”"
             },
             {
                 "id": "15",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "微软跳过WIN9发布WIN10目的",
                 "content": "10月1日，美联社周二刊文称，微软已经跳过Windows9，将其Windows操作系统的下一个版本命名为Windows10，其目的是强调作为该公司旗舰产品的Windows系统已在移动设备和互联网服务等领域中取得的进步。||微软当前的Windows版本是Windows8，这个版本被广泛批评为强迫用户接受彻底的行为变化。为此，微软将恢复此前版本中的一些传统功能，并承诺无论用户目前正在使用哪个版本，Windows 10都将为其带来熟悉感。举例来说，Windows 10系统中的“开始”菜单将与Windows 7类似，但所谓的“动态磁贴”则将与Windows 8相似。||据负责Windows设计和演进事务的微软副总裁乔·贝尔菲奥利（Joe Belfiore）称，Windows 10将为用户提供“Windows 7的熟悉感，同时还可提供Windows 8中已经存在的一些好处”，从而帮助商务用户升级至这个新版本。||在周二召开的旧金山发布会上，微软向商务用户初步展示了Windows 10操作系统，并将从周三开始面向选定用户提供技术预览版。微软计划在明年初公布个人版Windows 10的细节信息，并在2015年中期最终发布这个新版操作系统。||分析师认为，对于微软及其新任首席执行官萨提亚·纳德拉（Satya Nadella）来说，这个新的Windows版本能否取得成功是至关重要的一件事情，原因是纳德拉必须向外界证明，微软能在不牺牲传统计算体验的同时为移动设备用户提供良好体验。||这个新版系统代表着微软作出的一种尝试：在两年前推出Windows 8操作系统时，许多桌面用户都对其彻底的重新设计感到不满，而现在微软则希望撤回这种设计。但与此同时，微软又不会完全放弃填补个人电脑与移动设备之间“鸿沟”的目标：Windows 10系统仍将保留触摸屏概念，这是因为微软希望为那些在桌面电脑、平板电脑和智能手机之间切换使用的Windows用户创造出一种熟悉的体验。||微软执行副总裁、操作系统部门负责人特里·迈尔森（Terry Myerson）表示，Windows 10将是“全新一代”的操作系统，将可在从手机到游戏机等各种设备上运行。||微软目前主要提供三种Windows操作系统：面向传统电脑和平板电脑用户的Windows 8系统、面向智能手机的Windows Phone 8系统、以及面向Xbox游戏机的操作系统。通过将这些系统合为一体的方式，软件开发商将可更加容易地为各种设备开发应用，而消费者也将可更加容易地在各种设备之间进行切换，而不需要多次购买相同的应用。||不过，这并不意味着同一款应用在不同设备上将是完全一样的。开发商仍可针对不同尺寸的显示屏来对其应用作出调整，但无需为每种设备都从头开发不同的版本。另外，尽管使用相同的基本技术，但不同设备上的用户界面可能也仍将存在差别。就目前而言，微软计划保持当前的XBox界面不变。"
             },
             {
                 "id": "16",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "WINDOWS 10预览版快捷键汇总",
                 "content": "相比之前的Win7和Win8/8.1，Win10在传统桌面上做出了很多改动，相应的快捷键也发生了一些变化。下面我们就将它们集中汇总一下：||Win+C：强制调出Charm栏。||Win+左/右/上/左上/左下/右上/右下：将窗口快速缩放至1/2分屏、1/4分屏，其中1/4分屏为Win10新增功能，对应快捷键为Win+左上/左下/右上/右下。||Win+E：调出“主页”窗口。“主页”是Win10新增功能，包含最近访问文件夹、最近访问文件、收藏夹等，以资源管理器作为载体。||Win+Home：仅保留当前窗口，其余窗口最小化。||Win+Enter：直接启动“讲述人”。||Win+数字键：快速打开任务栏上已固定应用，比如Win+1打开第一个应用、Win+2打开第二个应用……以此类推，同时支持Metro应用。||Win+T：在任务栏图标间切换，但不打开，相当于鼠标悬停。||Alt+Tab：窗口切换器，当然Win10已经将它改进了，新版缩略图更大，并且是全屏显示。||Win+Tab：Win7时代的Flip3D（3D窗口切换器），到了Win10中变成了虚拟桌面切换器。嗯！和点击任务栏上那个按钮一个效果！||Ctrl+Shift+ESC：直接打开任务管理器。||Alt+左/右/上：快速跳转至上一个文件夹/下一个文件夹/父文件夹（仅限资源管理器）。||F11：沉浸式传统窗口布局（仅限传统程序）。||Win+Ctrl+左/右：切换当前虚拟桌面。||Win+Ctrl+D：建立新虚拟桌面。||Win+Ctrl+F4：关闭当前虚拟桌面（已打开窗口会自动移动到下一个桌面，不会丢失！）。||Win+D：显示传统桌面（即窗口最小化，沉浸式Metro需按动两下）。||Win+I：打开Charm栏→设置菜单（非新版Charm菜单）。||Win+X：打开简易版开始菜单，这个用来启动一些系统级程序还是很方便的。||Win+Prt Sc：屏幕截图。按下该快捷键后，屏幕会瞬间暗一下，并伴有“咔嚓”一声，视觉感和手机上的截屏软件很像，截图自动存放至“图片”文件夹。||Ctrl+V：这是Win10命令提示符里新增的，功能就是将剪切板内容直接粘贴到提示符内。而在此之前，这组快捷键所能得到的结果，仅仅是一个＾v。||以上是笔者结合自己经验，挑选的一些日常使用率较高的快捷键，诸如大家熟悉的Win+L、Win+R之类并未涉及。当然Win10是一款全新系统，短短两三周的试用是不可能将其探寻完整的。如果你在试用过程中也发现了一些不一样的按钮，也欢迎和我们一同分享，祝大家Win10玩得愉快！"
             },
             {
                 "id": "17",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "16则WIN10小技巧汇总！1分钟变WIN10高手",
                 "content": "Win10小技巧 这样用Win10才够炫！||　　Windows10发布了，开始菜单无疑是里面最耀眼的一项。当然你肯定知道我说这句话的含义，开始菜单不是Win10的全部，Win10也不仅仅只有开始菜单这一个选项。在这款全新的操作系统中，我们依旧会见到很多令人愉悦的小变化，或许它们不会像开始菜单那般显眼，但终究会为我们的日常使用带来更多方便！||　　Win10技巧1.窗口1/4分屏||　　从Win7时代开始，微软便引入了屏幕热区概念，即当你需要将一个窗口快速缩放至屏幕1/2尺寸时，只需将它直接拖拽到屏幕两边即可。在Win10中你会发现这项功能大大加强，除了左、右、上这三个热区外，我们还能拖拽至左上、左下、右上、右下四个边角，来实现更加强大的1/4分屏。不过目前一个已知Bug,那就是分屏后的窗口再拖拽回来尺寸无法复原，而之前的Win7/8都是可以的。||　　Win10技巧2.强制调出Charm栏||　　Win10取消了桌面环境下的Charm边栏，即使在选项中勾选\"当我指向右上角时，显示超级按钮\"也无济于事（当然我认为这也可能是当前版本的一个Bug）。那么如果你用惯了它该怎么办呢？很简单，试试Win+C吧！||Win10技巧3.智能化窗口排列||　　排列窗口时后面的内容被挡住无疑让人倍感郁闷，Win10很好地解决了这个问题。当我们通过拖拽法将一个窗口分屏显示时（目前仅限1/2比例），操作系统就会利用屏幕剩余区域自动将其他窗口的缩略图展示出来。如果你希望哪个和当前窗口并排显示的话，那就直接点它吧！||　　Win10技巧4.命令行支持Ctrl+V||　　这项功能使用的人不多，但绝对是跨时代的，因为你终于可以放心大胆地在命令提示符里使用Ctrl+V来粘贴剪贴板内容了。而在此之前，Ctrl+V换来的结果只是一个^v.||　　PS:此外鼠标右键也和Ctrl+V有着一样的效果，操作上会更简便一些。||　　Win10技巧5.快速缩放开始菜单||　　你是不是很奇怪国外的泄漏图中总有一个扁扁的开始菜单？其实那个与分辨率无关，或许就是作者本人人为地把它改小了！怎么改的呢？问得好，伸出一个手指按住Ctrl键，再伸出一个手指按住向上或向下键（人家说的就是光标键啦~），看到效果了吧！没效果？那谁……谁让你把Ctrl键松开的？||　　悄悄说一句，其实把鼠标放到菜单上边缘也能来回缩放，很方便吧，一般人我不告诉哈！||　　Win10技巧6.开始菜单固定传统程序||　　很多人都认为，新版开始菜单右侧就是专门给Metro应用预留的，其实这是一个天大的误会，新菜单右侧也能固定传统程序。方法是在程序图标上右击并选择\"固定到开始菜单\",或者直接把它拖拽进来即可。为了配合新菜单，Win10还特别允许用户通过右键快速缩小图标尺寸，只不过没有Metro版选择范围宽，只有\"小\"或\"中\"两个选项。||　　Win10技巧7.多彩开始菜单||　　新版开始菜单虽然没有Aero特效，但却可以变换不同颜色，很多网友并没有找到这一选项，其实它是与系统主题色搭配的。也就是说你的主题是蓝色，菜单就是蓝色，你的主题是绿色，菜单就是绿的。因此……还在郁闷自己的菜单不好看的童鞋们，可以换主题啦！||　　Win10技巧8.开始菜单里的一些特殊\"提示\"||　　有时开始菜单里的应用会加入一些特别的后缀，主要是为了和现有应用做一个区分。比方说\"安装\"预示着该应用曾经购买过，但尚未下载到这台电脑上；\"正在挂起\"意味着应用正在下载，但还没有下载完成；至于\"正在安装\"就更简单了，耐心等上几秒基本上就可以用了。||　　Win10技巧9.还原Win8版开始屏幕||　　新版开始菜单普遍受到键鼠用户的欢迎，当然总会有人问那么一句，要是我已经习惯了老版开始屏幕（Win8）该怎么办呢？其实这个并不困难，右击任务栏→\"属性\",然后在\"开始菜单\"标签下取消\"使用开始菜单而非开始屏幕\"就可以了。不过需要说一句的是，更改开始屏幕需要注销再重新登录一下，别手懒哈！||　　Win10技巧10.有没有不带Metro的开始菜单||　　新开始菜单同时融合了传统程序和Metro磁贴，这是微软下的一招很漂亮的棋。当然正所谓众口难调，如果碰上哪位较真的，非要整个纯Win7版菜单怎么办？||　　其实微软并未提供这项功能，但我发现取消开始菜单右侧的Metro区并非完全不可行，方法就是一个个右击那些磁贴，然后选择\"从开始屏幕取消固定\"就可以了。当然这个方法比较笨，但效果还是不错的，基本上处理完……就是下图这个样子了。||　　Win10技巧11.回归沉浸式Metro视图||　　Win10颠覆了传统Win8.1设计，真正为Metro应用加入了边框。当然事有两面性，对于字体和版面相对较大的Metro而言，原有的沉浸式视图并非完全不可取。那么如何回去呢？方法就是点击窗口最左侧的Charm菜单，然后选择最底下的\"全屏显示\"就可以了。更改后，实际效果类同Win8.1,鼠标放上后会显示一个隐藏式标题栏，再次点击该菜单返回。|||　　Win10技巧12.将窗口发送到其他工作区||　　很多网友都知道新系统可以通过Win+Tab切换不同桌面（虚拟桌面），但细节就不清楚了。首先窗口是可以任意移动的，比方说你在不同桌面下打开了不同窗口后，可以通过右键直接将其发送至另一个\"桌面\".或者直接在任务栏中点击有\"倒影\"的应用（代表该应用是已打开的，但未在当前桌面 ），来进入应用所在的那个\"桌面\".||　　一般来讲不同\"桌面\"下打开的窗口是不会混淆的，除非是你人为地关闭某一桌面（桌面关闭后，其上所有已打开窗口会自动转到下一个桌面，不会丢失！）。不过目前这个步骤并不支持鼠标拖拽，而且实际切换过程也不是非常直观，如果加入特效或者增加拖拽切换方法也许会更好一些，总之这些都是未来Win10需要改善的地方。||　　Win10技巧13.不应被忘视的简易版菜单||　　还记得Win8.1时代曾被拿来\"顶缸\"的那个简易版菜单么？在Win10中它依然存在。当然以目前的眼光来看，它和新版菜单的确没法比，但内置的各项系统模块却让很多键鼠用户倍感方便，比方说\"控制面板\"你会打开么？||　　Win10技巧14.添加到收藏夹 Ribbon||　　Ribbon在Win10中算不上是什么亮点，一来是由于Win8已经将这道饭炒过一遍，二来也是因为Win10默认将Ribbon隐藏起来了。其实如果你是一位Win8老用户，就能明显发现它和Win10的一点点区别，那就是Win10增加了一个\"快速添加收藏夹\"按钮。当然我知道在以前的系统中鼠标就是干这事的，但新系统显然更希望人们能够利用这个按钮！||　　Win10技巧15.程序一键卸载||　　除了带给键鼠用户最原始的操作体验外，新开始菜单的另一项进步就是可以直接卸载程序了。这个貌似不太显眼，但对于需要经常添删软件的网友来说，绝对是个值得点赞的进步。具体说就是当你对开始菜单里某个软件瞧着不顺眼时，不必费心地再去找什么控制面板了，直接右键→卸载。瞧瞧！就是这么简单。||　　PS:之前的Win8只能卸载Metro应用||　　Win10技巧16.跨版本更新||　　除了上述这些以外，Win10和前述系统还有一个重要差别，那就是支持跨版本更新。通俗来讲，无论是最开始的Win7,还是后面的Win8/8.1,想要升级必须得重新下载ISO并重新安装，这对于大多数网友来说太麻烦也太过于复杂了。而在Win10的\"电脑设置\"→\"更新和恢复\"中，你会发现这里悄然增加了一个\"预览版本\"的子模块，也就是说今后类似这种技术预览版升消费者预览版，消费者预览版升正式版之类的操作全部可以在这里一键完成。是不是听起来有些耳熟？没错！手机系统一直都是这么干的！||　　写在最后||　　当然目前的Win10还很不成熟，主要问题是为了迎合非触屏用户而舍弃了Win8.1的一些经典操作。比方说Metro沉浸式每次都需要手工进入、全屏状态下应用无法拖拽到其他显示器、无法像Win8.1那样并排显示Metro窗口等等。当然我知道这样说貌似有些矫情，但作为一个一体式操作系统而言（微软是这个意思吧~），如何让每一位用户都能找到取适合自己的操作方式，绝对是个值得微软深思的问题。或许有时候这个答案并不复杂，开放选项让每一位用户自己来选就是一个不错的主意！"
             },
             {
                 "id": "18",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "LINUX最严重的漏洞",
                 "content": "据国外媒体报道，网络安全专家周三警告称，开源软件Linux中一个频繁使用的片段“Bash”，最近发现存在安全漏洞，其对计算机用户造成的威胁可能要超过今年4月爆出的“心脏出血”(Heartbleed)漏洞。||Bash是用于控制Linux计算机命令提示符的软件。网络安全专家表示，黑客可以利用Bash中的一个安全漏洞，对目标计算机系统进行完全控制。||网络安全公司Trail of Bits的首席执行官丹·吉多(Dan Guido)指出：“与Heartbleed”相比，后者只允许黑客窥探计算机，但不会让黑客获得计算机的控制权。”||他说：“利用Bash漏洞的方法也简单得多，你可以直接剪切和粘贴一行软件代码，就能取得很好的效果。”||吉多还表示，他正考虑将自己公司非必要的服务器断网，以保护他们不会受到Bash漏洞的攻击，直到他能够修补这一漏洞为止。||网络安全公司Rapid7的工程经理托德·比尔兹利（Tod Beardsley）则警告称，Bash漏洞的严重程度被评为10级，意味着它具有最大的影响力，而其利用的难度被评为“低”级，意味着黑客比较容易地利用其发动网络攻击。||比尔兹利称：“利用这个漏洞，攻击者可能会接管计算机的整个操作系统，得以访问机密信息，并对系统进行更改等等。任何人的计算机系统，如果使用了Bash软件，都需要立即打上补丁。”||“Heartbleed”是开源加密软件OpenSSL中的一个安全漏洞，于今年4月被发现。由于全球三分之二的网站使用了OpenSSL，“Heartbleed”漏洞让数千万人的数据处于危险状态。这也迫使数十家科技公司发布安全补丁，以堵塞数百种使用了OpenSSL的产品中存在的安全漏洞。"
             },
             {
                 "id": "19",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "XP非官方SP4补丁包",
                 "content": "不得不承认，XP是一款相当“坚韧”的操作系统，即便是被抛弃，也一直在坚挺着。截止目前，全球范围内依然有25%的用户在坚守这一操作系统。显然，没有了微软官方的“庇护”，这些用户时刻都将面临严重的安全风险，好在Windows社区还在为之努力。近日，Windows社区中一位名为Harkaz的用户推出了非官方版Windows XP SP4。||据悉，这个“Windows XP SP4”包含Windows XP 32-bit以及POSReady 2009的所有最新升级（微软停止XP服务周期之后所发布的），包含组件：.NET Framework 1.0-4.0 (包括.NET 3.5 DirectX for Managed Code)、MSXML 4.0 SP3、Adobe Flash Player (2014.5)、IE8、 Windows Media Player 11、XPS Viewer EP、IMAPIv2、Remote Desktop Connection Client 7.0、Windows Search 4.0、Windows Rights Management Client、Windows Installer 4.5、Revoked Roots 2013.11、Root认证等等。||需要提醒的是，该补丁包可用于至少安装了SP1的XP，或者集成在任何XP安装盘内。"
             },
             {
                 "id": "20",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "仅需几分钟：将WIN7变成WIN9",
                 "content": "微软已正式宣布，将于9月30日在旧金山召开发布会，公布\"下一代Windows（Win9）\"的消息。不过，在官方公布之前，我们在网上看到了Win9的大量截图，从而对新一代操作系统的外观、功能有了一定的了解。||　　如果你对Win9的外观感兴趣，并且希望在现有的Win7电脑中体验一下的话，也不是不可能的，利用一些简单的技巧就能轻松搞定。||　　据Softpedia报道，DeviantArt用户mufflerexoz给大家分享了一个方法，只需改变Win7的图像式样，并安装一个第三方开始菜单即可将你的Win7在分分钟内看起来像Win9.||　　在一切开始之前，你需要为Windows主题文件安装一个UXTheme Multi-Patcher补丁，以便安装第三方主题；然后，下载该图像式样；最后，下载安装Win7开始菜单外观图标修改器，选择一个外观与Win9开始菜单一样的图标即可。||　　当然，这只是让你的Win7看起来像Win9,功能是不变的，想要体验真正的Win9,还要等到月底Win9开发者预览版发布之后才行。"
             },
             {
                 "id": "21",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "INDOWS SERVER 2012 R2 中 WSUS 新特性",
                 "content": "Windows Server 2012和R2版本的Windows服务器更新服务（WSUS）中有几个值得注意的新增功能。服务器管理器现在可以控制WSUS服务器的角色，比如添加和删除。例如，从服务器中删除角色后再次启用，要比执行动态迁移或者安装在另一台物理机上更强大更方便。||WSUS现在增加了12个PowerShell cmdlet，能够方便对WSUS任务执行脚本编写和自动化。WSUS现在也支持基于散列的身份验证。匹配SHA256散列有助于确保补丁和更新是“可信的”，如果感染代码进入补丁或更新，将摧毁一个企业。最后，WSUS支持两个不同的版本：服务器版本（WSUS）和称为Windows Update Agent（WUA）的客户端版本。WUA并不依赖WSUS或其特性。||记住，WSUS升级通常在Windows服务器操作系统版本升级过程中完成，首先需要从目标服务器中卸载旧版本WSUS。在继续下一步之前，一定要阅读更新文档。在升级WSUS服务器之前检查和了解任何潜在的WSUS问题是很重要的。||WSUS特性为IT管理员提供了一个自动化微软产品更新和补丁管理的通用平台。决定在企业范围内推出新代码之前，管理员必须花时间去测试每一个预期的补丁，或在实验室环境中进行更新，衡量这些对可靠性和性能带来的影响，查找可能无法预见的结果。另外还需要制定备份计划。如果出现问题，比如不兼容，管理员可以进行还原，在调查问题的根本原因并制定纠正措施之后，再进行恢复。"
             },
             {
                 "id": "22",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "WINDOWS 10发布之后用户可以免费更新电脑系统",
                 "content": "在发布Windows 10以后微软将别无选择地允许用户免费进行Windows更新，高德纳副总裁迈克尔在年度科技会议上称，如果微软想让用户一直更新版本，它必须实行免费更新，用户不会给微软一张信用卡说请划走我的钱我要更新版本。这也是微软的底线，免费也意味着用户再也不用担心付费更新他们的电脑系统了。||迈克尔还称就算Windows 10本身不是免费的，也必须向用户提供免费更新服务，微软最好可以向企业出售企业软件升级许可证，但许可证可能要花费更多。"
             },
             {
                 "id": "23",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "添加MEDIA CENTER或导致WIN10失活并拒绝更新",
                 "content": "本月初微软发布了面向企业 Windows 10 技术预览版，不少用户已经安装，其中也有用户尝试了 Windows Media Center 的安装 – 通过 Windows 8.1 时代的序列号来添加系统功能进行安装，但这样安装带来了一些问题。||当用户在尝试将 Windows Media Center 安装到 Windows 10 之后，系统将会将版本识别为 Windows 8.1 Pro with Media Center，并且会取消激活，并会阻止用户更新或安装补丁。||微软目前已经知道这个问题，并在官方论坛里发布了道歉，告诉用户不要这么去尝试。目前的解决方法是下载 ISO 文件，重新安装 Windows 10 技术预览版来覆盖。"
             },
             {
                 "id": "24",
-                "time": "2015-03-15",
+                "time": "2020-03-15",
                 "title": "电脑为什么死机",
                 "content": "死机【散热不良】显示器、电源和CPU在工作中发热量非常大，因此保持良好的通风状况非常重要，如果显示器过热将会导致色彩、图象失真甚至缩短显示器寿命。工作时间太长也会导致电源或显示器散热不畅而造成电脑死机。CPU的散热是关系到电脑运行的稳定性的重要问题，也是散热故障发生的“重灾区”。【移动不当】在电脑移动过程中受到很大振动常常会使机...|| |  正文：死机是令操作者颇为烦恼的事情。死机时的表现多为“蓝屏”，无法启动系统，画面“定格”无反应，鼠标、键盘无法输入，软件运行非正常中断等。尽管造成死机的原因很多，但是万变不离其宗，其原因永远也脱离不了硬件与软件两方面。||由硬件原因引起的死机||【散热不良】|显示器、电源和CPU在工作中发热量非常大，因此保持良好的通风状况非常重要，如果显示器过热将会导致色彩、图象失真甚至缩短显示器寿命。工作时间太长也会导致电源或显示器散热不畅而造成电脑死机。CPU的散热是关系到电脑运行的稳定性的重要问题，也是散热故障发生的“重灾区”。||【移动不当】|在电脑移动过程中受到很大振动常常会使机器内部器件松动，从而导致接触不良，引起电脑死机，所以移动电脑时应当避免剧烈振动。||【灰尘杀手】|机器内灰尘过多也会引起死机故障。如软驱磁头或光驱激光头沾染过多灰尘后，会导致读写错误，严重的会引起电脑死机。||【设备不匹配】|如主板主频和CPU主频不匹配，老主板超频时将外频定得太高，可能就不能保证运行的稳定性，因而导致频繁死机。||【软硬件不兼容】|三维软件和一些特殊软件，可能在有的微机上就不能正常启动甚至安装，其中可能就有软硬件兼容方面的问题。||【内存条故障】|主要是内存条松动、虚焊或内存芯片本身质量所致。应根据具体情况排除内存条接触故障，如果是内存条质量存在问题，则需更换内存才能解决问题。||【硬盘故障】|主要是硬盘老化或由于使用不当造成坏道、坏扇区。这样机器在运行时就很容易发生死机。可以用专用工具软件来进行排障处理，如损坏严重则只能更换硬盘了。另外对于在不支持UDMA 66/100的主板，应注意CMOS中硬盘运行方式的设定。||【cpu超频】|超频提高了CPU的工作频率，同时，也可能使其性能变得不稳定。究其原因，CPU在内存中存取数据的速度本来就快于内存与硬盘交换数据的速度，超频使这种矛盾更加突出，加剧了在内存或虚拟内存中找不到所需数据的情况，这样就会出现“异常错误”。解决办法当然也比较简单，就是让CPU回到正常的频率上。||【硬件资源冲突】|是由于声卡或显示卡的设置冲突，引起异常错误。此外，其它设备的中断、DMA或端口出现冲突的话，可能导致少数驱动程序产生异常，以致死机。解决的办法是以“安全模式”启动，在“控制面板”→“系统”→“设备管理”中进行适当调整。对于在驱动程序中产生异常错误的情况，可以修改注册表。选择“运行”，键入“REGEDIT”，进入注册表编辑器，通过选单下的“查找”功能，找到并删除与驱动程序前缀字符串相关的所有“主键”和“键值”，重新启动。||【内存容量不够】|内存容量越大越好，应不小于硬盘容量的0.5～1%，如出现这方面的问题，就应该换上容量尽可能大的内存条。||【劣质零部件】|少数不法商人在给顾客组装兼容机时，使用质量低劣的板卡、内存，有的甚至出售冒牌主板和Remark过的CPU、内存，这样的机器在运行时很不稳定，发生死机在所难免。因此，用户购机时应该警惕，并可以用一些较新的工具软件测试电脑，长时间连续考机（如72小时），以及争取尽量长的保修时间等。||由软件原因引起的死机||【病毒感染】|病毒可以使计算机工作效率急剧下降，造成频繁死机。这时，我们需用杀毒软件如KV300、金山毒霸、瑞星等来进行全面查毒、杀毒，并做到定时升级杀毒软件。||【CMOS设置不当】|该故障现象很普遍，如硬盘参数设置、模式设置、内存参数设置不当从而导致计算机无法启动。如将无ECC功能的内存设置为具有ECC功能，这样就会因内存错误而造成死机。||【系统文件的误删除】|由于Windows 9x启动需要有Command.com、Io.sys、Msdos.sys等文件，如果这些文件遭破坏或被误删除，即使在CMOS中各种硬件设置正确无误也无济于事。解决方法：使用同版本操作系统的启动盘启动计算机，然后键入“SYS C：”，重新传送系统文件即可。||【初始化文件遭破坏】|由于Windows 9x启动需要读取System.ini、Win.ini和注册表文件，如果存在Config.sys、Autoexec.bat文件，这两个文件也会被读取。只要这些文件中存在错误信息都可能出现死机，特别是System.ini、Win.ini、User.dat、System.dat这四个文件尤为重要。||【动态链接库文件（DLL）丢失】|在Windows操作系统中还有一类文件也相当重要，这就是扩展名为DLL的动态链接库文件，这些文件从性质上来讲是属于共享类文件，也就是说，一个DLL文件可能会有多个软件在运行时需要调用它。如果我们在删除一个应用软件的时候，该软件的反安装程序会记录它曾经安装过的文件并准备将其逐一删去，这时候就容易出现被删掉的动态链接库文件同时还会被其它软件用到的情形，如果丢失的链接库文件是比较重要的核心链接文件的话，那么系统就会死机，甚至崩溃。我们可用工具软件如“超级兔仔”对无用的DLL文件进行删除，这样会避免误删除。||【硬盘剩余空间太少或碎片太多】|如果硬盘的剩余空间太少，由于一些应用程序运行需要大量的内存、这样就需要虚拟内存，而虚拟内存则是由硬盘提供的，因此硬盘要有足够的剩余空间以满足虚拟内存的需求。同时用户还要养成定期整理硬盘、清除硬盘中垃圾文件的良好习惯。||【BIOS/ target=_blank class=infotextkey>BIOS升级失败】|应备份BIOS以防不测，但如果你的系统需要对BIOS进行升级的话，那么在升级之前最好确定你所使用BIOS版本是否与你的PC相符合。如果BIOS升级不正确或者在升级的过程中出现意外断电，那么你的系统可能无法启动。所以在升级BIOS前千万要搞清楚BIOS的型号。如果你所使用的BIOS升级工具可以对当前BIOS进行备份，那么请把以前的BIOS在磁盘中拷贝一份。同时看系统是否支持BIOS恢复并且还要懂得如何恢复。||【软件升级不当】|大多数人可能认为软件升级是不会有问题的，事实上，在升级过程中都会对其中共享的一些组件也进行升级，但是其它程序可能不支持升级后的组件从而导致各种问题。||【滥用测试版软件】|最好少用软件的测试版，因为测试软件通常带有一些BUG或者在某方面不够稳定，使用后会出现数据丢失的程序错误、死机或者是系统无法启动。||【非法卸载软件】|不要把软件安装所在的目录直接删掉，如果直接删掉的话，注册表以及Windows目录中会有很多垃圾存在，久而久之，系统也会变不稳定而引起死机。||【使用盗版软件】|因为这些软件可能隐藏着病毒，一旦执行，会自动修改你的系统，使系统在运行中出现死机。||【应用软件的缺陷】|这种情况是常见的，如在Win 98中运行那些在DOS或Windows 3．1中运行良好的16位应用软件。Win 98是32位的，尽管它号称兼容，但是有许多地方是无法与16位应用程序协调的。还有一些情况，如在Win 95下正常使用的外设驱动程序，当操作系统升级后，可能会出现问题，使系统死机或不能正常启动。遇到这种情况应该找到外设的新版驱动。||【启动的程序太多】|这使系统资源消耗殆尽，使个别程序需要的数据在内存或虚拟内存中找不到，也会出现异常错误。||【非法操作】|用非法格式或参数非法打开或释放有关程序，也会导致电脑死机。请注意要牢记正确格式和相关参数，不随意打开和释放不熟悉的程序。||【非正常关闭计算机】|不要直接使用机箱中的电源按钮，否则会造成系统文件损坏或丢失，引起自动启动或者运行中死机。对于Windows 98/2000/NT等系统来说，这点非常重要，严重的话，会引起系统崩溃。||【内存中冲突】|有时候运行各种软件都正常，但是却忽然间莫名其妙地死机，重新启动后运行这些应用程序又十分正常，这是一种假死机现象。出现的原因多是Win 98的内存资源冲突。大家知道，应用软件是在内存中运行的，而关闭应用软件后即可释放内存空间。但是有些应用软件由于设计的原因，即使在关闭后也无法彻底释放内存的，当下一软件需要使用这一块内存地址时，就会出现冲突。"
             }
